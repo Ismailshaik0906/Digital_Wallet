@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Wallet Manager</title>
+    <script src="../js/index.js" defer></script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-image: radial-gradient(circle at center, rgb(36, 123, 160), white);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        #container {
+            background-color: rgb(254, 254, 254);
+            width: 500px;
+            padding: 3%;
+            margin: 5% auto;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5rem;
+            color: rgb(28, 61, 97); 
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+            text-decoration: underline;
+
+        }
+        h3 {
+            font-size: 1.25rem;
+            color: red;
+            margin: 15px 0;
+        }
+        p, h2 {
+            color: rgb(28, 61, 97);
+            margin: 15px 0;
+        }
+        input[type="text"] {
+            width: 70%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid rgb(28, 61, 97);
+            border-radius: 10px;
+            font-size: 1rem;
+            color: rgb(28, 61, 97);
+            box-shadow: 0 0 5px rgba(28, 61, 97, 0.5);
+            transition: border-color 0.3s;
+        }
+        input[type="text"]:focus {
+            border-color: rgb(41, 167, 193);
+            outline: none;
+        }
+        #btn {
+            padding: 10px 20px;
+            background-color: rgb(41, 167, 193);
+            border: none;
+            border-radius: 15px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 1px 4px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        #btn:hover {
+            background-color: rgb(26, 143, 161);
+            transform: scale(1.05);
+            color: white;
+        }
+        
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 20px;
+            max-height: 150px;
+            overflow-y: auto;
+        }
+        li {
+            background-color: rgba(240, 240, 240, 0.8);
+            padding: 10px;
+            margin-bottom: 5px;
+            border-radius: 10px;
+            color: rgb(28, 61, 97);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+        #date{
+            color: rgb(28, 61, 97);
+            font-size: 2vw;
+            margin-right: 90%;
+            display: flex;
+            position: absolute;
+            
+        }
+        
+        #time{
+            color: rgb(28, 61, 97);
+            font-size: 2vw;
+            margin-left: 80%;
+            
+
+        }
+        #owner-name {
+            font-size: 1.5rem;
+            color: rgb(41, 167, 193);
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="container">
+
+        <h2 id="date"></h2> <!-- This will display the current date and time -->
+        <h2 id="time"></h2>
+        <h1>Digital Wallet Manager</h1>
+        
+
+        <p id="owner-name"></p>  <!-- Display Owner's Name -->
+
+        <h3>Deposit Amount:</h3>
+        <input id="deposit" type="text" placeholder="Enter The Amount">
+        <input id="btn" type="button" value="Deposit" onclick="eshan.deposit()"><br>
+
+        <h3>Withdraw Amount:</h3>
+        <input id="withdraw" type="text" placeholder="Enter The Amount">
+        <input id="btn" type="button" value="Withdraw" onclick="eshan.withdraw()"><br>
+
+        <h3 id="bal">Balance: ₹0.00</h3> <!-- Display balance -->
+        <h3>Transaction History:</h3>
+        <ul id="transaction-history"></ul> <!-- Display transaction history -->
+    </div>
+    <audio id="deposit-sound" src="../assets/audio/deposit.mp3"></audio> <!-- Sound for deposit -->
+    <audio id="withdraw-sound" src="../assets/audio/withdraw.mp3" ></audio> <!-- Sound for withdrawal -->
+
+    
+</body>
+</html>
