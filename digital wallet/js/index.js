@@ -55,13 +55,13 @@ function BankAccount(owner, balance) {
     };
     // Format Amount as Currency
     this.formatCurrency = function (amount) {
-    return typeof amount === "number" ? new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR' }).format(amount) : "Invalid amount";
+        return new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR' }).format(amount);
     };
 
     // Play Sound
     this.playSound = function (type) {
         const sound = document.getElementById(type === "deposit" ? "deposit-sound" : "withdraw-sound");
-        if (sound) sound.play();
+        sound.play();
     };
 
 
